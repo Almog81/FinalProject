@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Web Suite" parallel="false">
+    <parameter name="PlatformName" value="web"/>
+    <!-- <listeners>
+        <listener class-name="utilities.Listeners"/>
+    </listeners> -->
+    <test name="Web Test">
+        <classes>
+            <class name="sanity.OrangeHRMWeb">
+                <methods>
+                    <include name="Test01_verifyLogo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

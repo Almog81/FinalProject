@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="final_project_infrastructure_jar">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../FinalProject-Split/final-project-infrastructure/out/artifacts/final_project_infrastructure_jar" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/../FinalProject-Split/final-project-infrastructure/out/artifacts/final_project_infrastructure_jar" />
+    </SOURCES>
+    <jarDirectory url="file://$PROJECT_DIR$/../FinalProject-Split/final-project-infrastructure/out/artifacts/final_project_infrastructure_jar" recursive="false" />
+    <jarDirectory url="file://$PROJECT_DIR$/../FinalProject-Split/final-project-infrastructure/out/artifacts/final_project_infrastructure_jar" recursive="false" type="SOURCES" />
+  </library>
+</component>

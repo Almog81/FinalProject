@@ -1,0 +1,1 @@
+java -jar students.jar --server.port=9000

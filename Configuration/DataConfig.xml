@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Enviromant>
+    <!-- Timeout -->
+    <Timeout>5</Timeout>
+
+    <!-- General -->
+    <PlatformName>web</PlatformName> <!-- Can be: web / mobile / api / electron / desktop-->
+
+    <!-- Web -->
+    <BrowserName>Chrome</BrowserName> <!-- Can be: chrome / firefox / ie -->
+    <URL>http://localhost/orangehrm</URL> <!-- Can be: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login -->
+
+    <!-- Authorisation -->
+    <UserName>Admin</UserName>
+    <Password>Admin12!@</Password> <!-- or admin123 -->
+
+    <!-- Image Location -->
+    <ImageRepo>D:\Automation\FinalProject\ImageRepository\</ImageRepo>
+
+    <!-- Data Driven Testing -->
+    <DDTFile>./DDTFiles/</DDTFile>
+
+    <!-- Mobile -->
+    <UDID>faab4e1b</UDID>  <!-- OnePlus3: faab4e1b, Mi10:  -->
+    <AppPackage>kr.sira.unit</AppPackage>
+    <AppActivity>.Intro</AppActivity>
+    <AppiumServer>http://localhost:4723/wd/hub</AppiumServer>
+
+    <!-- API -->
+    <urlAPI>http://localhost:9000</urlAPI>
+    <Api_UserName>null</Api_UserName>
+    <Api_Password>null</Api_Password>
+
+    <!-- Electron -->
+    <ElectronDriverPath>./Drivers/ElectronDriver.exe</ElectronDriverPath>
+    <ElectronAppPath>C:/Users/almog/AppData/Local/Programs/todolist/Todolist.exe</ElectronAppPath>
+
+    <!-- Desktop -->
+    <DesktopServer>Http://127.0.0.1:4723</DesktopServer>
+    <DesktopAppPath>Microsoft.WindowsCalculator_8wekyb3d8bbwe!App</DesktopAppPath>
+
+    <!-- Database -->
+    <dbURL>jdbc:mysql://localhost:3306/DBTesting</dbURL>
+    <dbUserName>Admin12</dbUserName>
+    <dbPassword>Admin12!@</dbPassword>
+
+</Enviromant>
