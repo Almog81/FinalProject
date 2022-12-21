@@ -1,11 +1,10 @@
-# FinalProject
-## **Full Stack Automation Corse**
+## **FinalProject - Full Stack Automation Corse**
 This is the My Final Project of the course Full Stack Test Automation.
 
 ### _introduction_
 #### Introduction overview
 
-This project came to summarize all the knowledge and abilities I learned in the "full stack automation" course of **Yoni Flanner** from the [AtidCollege](https://atidcollege.co.il/).
+This project came to summarize all the knowledge and abilities I learned in the "Full Stack Automation" course of **Yoni Flanner** from the [AtidCollege](https://atidcollege.co.il/).
 
 The purpose of the project is to present one automation infrastructure for several platforms:
  * Web based application
@@ -15,7 +14,7 @@ The purpose of the project is to present one automation infrastructure for sever
 * Desktop application
 
 #### Divide and Conquer
-My approach to the project is a complete separation between the testing infrastructure and the tests themselves. This structure enables the creation of new tests easily, and also enables work with different applications on the same infrastructure.
+The approach to the project is a complete separation between the testing infrastructure and the tests themselves. This structure enables the creation of new tests easily, and also enables work with different applications on the same infrastructure.
 
 ### _Project Overview_
 
@@ -23,10 +22,10 @@ My approach to the project is a complete separation between the testing infrastr
 * Page Object Design Pattern
 * Project Layers(Extensions/Work Flows/Test Cases...)
 * Support of Different Clients/Browsers
-* Failure Mechanism
+* Failure Mechanism 
 * Common Functionality
 * External Files Support
-* Reporting System (including screenshots)
+* Reporting System (including video recording and screenshots)
 * Visual Testing
 * DB support
 * CI support  
@@ -52,6 +51,7 @@ My approach to the project is a complete separation between the testing infrastr
 * [Jenkins](https://www.jenkins.io/)- for tests execution
 * REST Assured - for API testing
 * [Allure](http://allure.qatools.ru/) Reports - as the main reporting system
+* Sikuli - for Visual Testing
 
 ### _Known Issues:_
 Sometimes can be conflicts with some dependencies the applications are using.
