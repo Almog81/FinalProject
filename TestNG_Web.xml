@@ -7,11 +7,7 @@
     </listeners> -->
     <test name="Web Test">
         <classes>
-            <class name="sanity.OrangeHRMWeb">
-                <methods>
-                    <include name="Test01_verifyLogo"/>
-                </methods>
-            </class>
+            <class name="sanity.OrangeHRMWeb"/>
         </classes>
     </test>
 </suite>
