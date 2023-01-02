@@ -34,8 +34,7 @@ The approach to the project is a complete separation between the testing infrast
 
 ### _Demonstration:_
 * OrangeHRM webpage - Web based application
-[Video Demonstration](null)
-https://github.com/Almog81/FinalProject/blob/6197f5f73b5d8050ddedbad811439b6cf92d5f2e/test-recordings/Test07_verifySearchMenuFactuality.avi
+[Video Demonstration](test-recordings/Test07_verifySearchMenuFactuality.avi)
 * Unit Convert - Mobile application
 [Video Demonstration](null)
 * Todo List - Electron application
