@@ -39,7 +39,7 @@ The approach to the project is a complete separation between the testing infrast
 [Video Demonstration](null)
 * Todo List - Electron application
 [Video Demonstration](https://drive.google.com/file/d/12XNH_-WPfnvJo6-QVMJ4ETqQy7-tXxdK/view?usp=share_link)
-https://drive.google.com/file/d/12XNH_-WPfnvJo6-QVMJ4ETqQy7-tXxdK/view?usp=share_link
+![Demonstration](https://drive.google.com/file/d/14riYS0_FfnINaKltfJDubOuk_-RxHjZZ/view?usp=share_link)
 * Windows calculator - Desktop application
 [Video Demonstration](null)
 
