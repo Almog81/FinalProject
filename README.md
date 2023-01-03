@@ -43,7 +43,8 @@ The approach to the project is a complete separation between the testing infrast
 [Video Demonstration](https://drive.google.com/file/d/12XNH_-WPfnvJo6-QVMJ4ETqQy7-tXxdK/view?usp=share_link)
 ![Demonstration](https://raw.githubusercontent.com/Almog81/FinalProject/master/Demonstration/Electron%20Test%20-%20ToDo%20List.gif)
 * Windows calculator - Desktop application
-[Video Demonstration](null)
+[Video Demonstration](https://drive.google.com/file/d/1B6CQNvPGde_9_7HPum9MfdUl5OVCJmd3/view?usp=share_link)
+![Demonstration](https://raw.githubusercontent.com/Almog81/FinalProject/master/Demonstration/Desktop%20Test%20-%20Calculator.gif)
 
 ### _Tools & Frameworks used in the project:_
 * TestNG - Testing Framework
