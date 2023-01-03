@@ -18,25 +18,25 @@ public class CalculatorDesktop extends CommonOps {
     @Description("This Test preform a Plus Action and verifies the result")
     public void Test01_plusAction(){
         DesktopFlows.numberPlusNumber("12","98");
-        Verifications.verifyTextInElement(calcMain.field_result.get(4),"110");
+        Verifications.verifyText(calcMain.field_result.getText().split(" ")[2],"110");
     }
     @Test(description = "Test02 - Minus Action")
     @Description("This Test preform a Minus Action and verifies the result")
     public void Test02_MinusAction(){
         DesktopFlows.numberMinusNumber("329","150");
-        Verifications.verifyTextInElement(calcMain.field_result.get(4),"179");
+        Verifications.verifyText(calcMain.field_result.getText().split(" ")[2],"179");
     }
     @Test(description = "Test03 - Multiply Action")
     @Description("This Test preform a Multiply Action and verifies the result")
     public void Test03_MultiplyAction(){
         DesktopFlows.numberMultiplyNumber("4","2");
-        Verifications.verifyTextInElement(calcMain.field_result.get(4),"8");
+        Verifications.verifyText(calcMain.field_result.getText().split(" ")[2],"8");
     }
     @Test(description = "Test04 - Divide Action")
     @Description("This Test preform a Divide Action and verifies the result")
     public void Test04_plusAction(){
         DesktopFlows.numberDivideNumber("20","2");
-        Verifications.verifyTextInElement(calcMain.field_result.get(4),"10");
+        Verifications.verifyText(calcMain.field_result.getText().split(" ")[2],"10");
     }
 
 }

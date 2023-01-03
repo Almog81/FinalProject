@@ -60,7 +60,9 @@ public class MainPage {
 
 
     //Result
-    @FindBy(className = "TextBlock") ///*[@AutomationId='TextContainer']
-    public  List<WebElement> field_result;
+    @FindBy(xpath = "//*[@AutomationId='CalculatorResults']")
+    public WebElement field_result;
+//    @FindBy(className = "TextBlock") ///*[@AutomationId='TextContainer']
+//    public  List<WebElement> field_result;
 
 }

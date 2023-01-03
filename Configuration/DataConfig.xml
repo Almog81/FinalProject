@@ -33,7 +33,7 @@
 
     <!-- Electron -->
     <ElectronDriverPath>./Drivers/ElectronDriver.exe</ElectronDriverPath>
-    <ElectronAppPath>C:/Users/almog/AppData/Local/Programs/todolist/Todolist.exe</ElectronAppPath>
+    <ElectronAppPath>C:/Automation/todolist/Todolist.exe</ElectronAppPath>
 
     <!-- Desktop -->
     <DesktopServer>Http://127.0.0.1:4723</DesktopServer>
