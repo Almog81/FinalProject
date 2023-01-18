@@ -1,3 +1,4 @@
+
 ## **FinalProject - Full Stack Automation Corse**
 This is the My Final Project of the course Full Stack Test Automation.
 
@@ -33,17 +34,18 @@ The approach to the project is a complete separation between the testing infrast
 ***
 
 ### _Demonstration:_
-* OrangeHRM webpage - Web based application
+* **OrangeHRM webpage** - Web based application
 [Video Demonstration](https://drive.google.com/file/d/1c4mzDzwvgR6WKGdq7hqnbV3bhOeUxr9p/view?usp=share_link)
 ![Demonstration](https://raw.githubusercontent.com/Almog81/FinalProject/master/Demonstration/Web%20Testing%20-%20OrangeHRM.gif)
-* Unit Convert - Mobile application
+* **Unit Convert** - Mobile application
 [Video Demonstration](https://drive.google.com/file/d/1payi5kDQgPpupV6NcD_PeykjK3CNCj82/view)
 ![Demonstration](https://raw.githubusercontent.com/Almog81/FinalProject/master/Demonstration/Mobile%20Test%20-%20Unit%20Converter.gif)
-* Todo List - Electron application
+* **Todo List** - Electron application
 [Video Demonstration](https://drive.google.com/file/d/12XNH_-WPfnvJo6-QVMJ4ETqQy7-tXxdK/view?usp=share_link)
 ![Demonstration](https://raw.githubusercontent.com/Almog81/FinalProject/master/Demonstration/Electron%20Test%20-%20ToDo%20List.gif)
-* Windows calculator - Desktop application
-[Video Demonstration](null)
+* **Windows calculator** - Desktop application
+[Video Demonstration](https://drive.google.com/file/d/1B6CQNvPGde_9_7HPum9MfdUl5OVCJmd3/view?usp=share_link)
+![Demonstration](https://raw.githubusercontent.com/Almog81/FinalProject/master/Demonstration/Desktop%20Test%20-%20Calculator.gif)
 
 ### _Tools & Frameworks used in the project:_
 * TestNG - Testing Framework
@@ -57,5 +59,5 @@ The approach to the project is a complete separation between the testing infrast
 * Sikuli - for Visual Testing
 
 ### _Known Issues:_
-Sometimes can be conflicts with some dependencies the applications are using.
-Hence, the project is for DEMO purpose only. In production it should be divided into several projects.
+ - Sometimes can be conflicts with some dependencies the applications are using. Hence, the project is for DEMO purpose only. In production it should be divided into several projects.
+ - With different resolutions, Tests that use the image could fail (like Test 06 in OrangeHRMWeb.java)
