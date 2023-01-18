@@ -63,8 +63,8 @@ public class CommonOps extends Base {
             return doc.getElementsByTagName(nodeName).item(0).getTextContent();
     }
 
-
-    public static void initBrowser(String browserType) {
+    @Parameters({"Location"})
+    public static void initBrowser(String browserType, String location) {
         if (browserType.equalsIgnoreCase("Chrome"))
             driver = initChromeDriver();
         else if (browserType.equalsIgnoreCase("firefox"))
@@ -79,7 +79,11 @@ public class CommonOps extends Base {
         action = new Actions(driver);
 
         driver.manage().window().maximize();
-        driver.get(getData("URL"));
+        Location = location;
+        if (Location.equalsIgnoreCase("local"))
+            driver.get(getData("Local-URL"));
+        else if (Location.equalsIgnoreCase("Online"))
+            driver.get(getData("Online-URL"));
         ManagePages.initOrangeHRM();
 
     }
@@ -154,11 +158,11 @@ public class CommonOps extends Base {
     }
 
     @BeforeClass
-    @Parameters({"PlatformName"})
-    public static void startSession(String platform) {
+    @Parameters({"PlatformName","Location"})
+    public static void startSession(String platform, String location) {
         PlatformName = platform;
         if(PlatformName.equalsIgnoreCase("web"))
-            initBrowser(getData("BrowserName"));
+            initBrowser(getData("BrowserName"),location);
         else if (PlatformName.equalsIgnoreCase("mobile"))
             initMobile();
         else if (PlatformName.equalsIgnoreCase("api"))

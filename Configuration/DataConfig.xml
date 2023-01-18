@@ -8,11 +8,13 @@
 
     <!-- Web -->
     <BrowserName>Chrome</BrowserName> <!-- Can be: chrome / firefox / ie -->
-    <URL>http://localhost/orangehrm</URL> <!-- Can be: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login -->
+    <Local-URL>http://localhost/orangehrm</Local-URL>
+    <Online-URL>https://opensource-demo.orangehrmlive.com/web/index.php/auth/login</Online-URL>
 
     <!-- Authorisation -->
     <UserName>Admin</UserName>
-    <Password>Admin12!@</Password> <!-- or admin123 -->
+    <Password>admin123</Password> <!-- Admin12!@ / admin123 -->
+    <Location>local</Location> <!-- Local / online -->
 
     <!-- Image Location -->
     <ImageRepo>D:\Automation\FinalProject\ImageRepository\</ImageRepo>

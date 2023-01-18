@@ -2,12 +2,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Web Suite" parallel="false">
     <parameter name="PlatformName" value="web"/>
-    <!-- <listeners>
-        <listener class-name="utilities.Listeners"/>
-    </listeners> -->
+    <parameter name="Location" value="online"/>
     <test name="WebDB Test">
         <classes>
-            <class name="sanity.OrangeHRMWebDB"/>
+            <class name="sanity.OrangeHRMWebOnline"/>
         </classes>
     </test>
 </suite>

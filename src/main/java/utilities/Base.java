@@ -30,6 +30,7 @@ public class Base {
 
     //Web
     protected static WebDriver driver;
+    protected static String Location;
 
     //Mobile
     protected static AppiumDriver mobileDriver;
