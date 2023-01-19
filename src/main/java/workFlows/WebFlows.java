@@ -59,5 +59,13 @@ public class WebFlows extends CommonOps {
         UIActions.click(orangeHRMLeftMenuPage.Menu.get(0));
     }
 
+    @Step("Get The number in parentheses")
+    public static int getNumberInParentheses(WebElement elem){
+        int start = elem.getText().indexOf('(') + 1;
+        int end = elem.getText().indexOf(')');
+        String result = elem.getText().substring(start,end);
+        return (int) Long.parseLong(result);
+    }
+
 
 }

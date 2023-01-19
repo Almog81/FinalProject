@@ -6,6 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import java.util.List;
 
 public class EmployeeListPage {
+
+    @FindBy(css = ".orangehrm-horizontal-padding.orangehrm-vertical-padding>.oxd-text.oxd-text--span")
+    public WebElement numberOfList;
     @FindBy(xpath = "//*/div[@class=\"oxd-table-card\"]")
     public List<WebElement> listOfEmployees;
 
