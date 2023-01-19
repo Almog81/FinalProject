@@ -6,6 +6,8 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.json.simple.JSONObject;
+import org.openqa.selenium.JavascriptException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -24,6 +26,7 @@ public class Base {
     //General
     protected static WebDriverWait wait;
     protected static Actions action;
+    protected static JavascriptExecutor js;
     protected static SoftAssert softAssert;
     protected static Screen screen;
     protected static String PlatformName;

@@ -14,17 +14,20 @@ public class UIActions extends CommonOps {
     @Step("Click on Element")
     public static void click(WebElement elem){
         wait.until(ExpectedConditions.elementToBeClickable(elem));
+        js.executeScript("arguments[0].scrollIntoView(true);", elem);
         elem.click();
     }
     @Step("Update Text Element")
     public static void updateText(WebElement elem,String text){
         wait.until(ExpectedConditions.visibilityOf(elem));
+        js.executeScript("arguments[0].scrollIntoView(true);", elem);
         elem.sendKeys(text);
     }
 
     @Step("Update Text Element as Human")
     public static void updateTextHuman(WebElement elem,String text){
         wait.until(ExpectedConditions.visibilityOf(elem));
+        js.executeScript("arguments[0].scrollIntoView(true);", elem);
         for (char ch:text.toCharArray()) {
             Uninterruptibles.sleepUninterruptibly(500, TimeUnit.MILLISECONDS);
             elem.sendKeys(ch +"");
@@ -34,12 +37,14 @@ public class UIActions extends CommonOps {
     @Step("Update DropDown Element")
     public static void updateDropDown(WebElement elem,String text){
         wait.until(ExpectedConditions.visibilityOf(elem));
+        js.executeScript("arguments[0].scrollIntoView(true);", elem);
         Select dropDown = new Select(elem);
         dropDown.selectByVisibleText(text);
     }
     @Step("Muse Hover on Element")
-    public static void museHover(WebElement elm){
-        action.moveToElement(elm).click().build().perform();
+    public static void museHover(WebElement elem){
+        js.executeScript("arguments[0].scrollIntoView(true);", elem);
+        action.moveToElement(elem).click().build().perform();
     }
 
     @Step("Search for Menu Option")
@@ -49,6 +54,7 @@ public class UIActions extends CommonOps {
     @Step("Send Keys to Element")
     public static void sendKeysAction(WebElement elem, Keys value){
         wait.until(ExpectedConditions.visibilityOf(elem));
+        js.executeScript("arguments[0].scrollIntoView(true);", elem);
         elem.sendKeys(value);
     }
 }
