@@ -9,6 +9,8 @@ public class EmployeeListPage {
 
     @FindBy(css = ".orangehrm-horizontal-padding.orangehrm-vertical-padding>.oxd-text.oxd-text--span")
     public WebElement numberOfList;
+    @FindBy(css = ".oxd-pagination-page-item.oxd-pagination-page-item--previous-next")
+    public WebElement btn_nextPage;
     @FindBy(xpath = "//*/div[@class=\"oxd-table-card\"]")
     public List<WebElement> listOfEmployees;
 

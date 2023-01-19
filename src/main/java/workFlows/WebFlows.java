@@ -36,6 +36,11 @@ public class WebFlows extends CommonOps {
     }
     @Step("Business Flow: Delete Employee")
     public static void deleteEmployee(String firstName){
+        Boolean find = findEmployee(firstName);
+        while (!find) {
+            UIActions.click(orangeHRMEmployeeListPage.btn_nextPage);
+            find = findEmployee(firstName);
+        }
         List<WebElement> employeeList = driver.findElements(By.xpath("//*/div[@class=\"oxd-table-card\"]/div/div[3]/div"));
         for (int i = 1 ; i <= employeeList.size(); i++){
             if (employeeList.get(i-1).getText().equals(firstName))
@@ -43,6 +48,17 @@ public class WebFlows extends CommonOps {
         }
         UIActions.click(orangeHRMEmployeeListPage.btn_yes);
     }
+    @Step("Business Flow: Find if Employee in This Page")
+    public static Boolean findEmployee(String firstName){
+        Boolean find = false;
+        List<WebElement> employeeList = driver.findElements(By.xpath("//*/div[@class=\"oxd-table-card\"]/div/div[3]/div"));
+        for (int i = 1 ; i <= employeeList.size(); i++){
+            if (employeeList.get(i-1).getText().equals(firstName))
+                find = true;
+        }
+        return find;
+    }
+
     @Step("Business Flow: Search And Verify Menu Option")
     public static void searchAndVerify(String textToSearch, String expected){
         UIActions.setSearch(textToSearch);
