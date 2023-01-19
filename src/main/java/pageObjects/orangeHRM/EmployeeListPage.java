@@ -9,6 +9,7 @@ public class EmployeeListPage {
 
     @FindBy(css = ".orangehrm-horizontal-padding.orangehrm-vertical-padding>.oxd-text.oxd-text--span")
     public WebElement numberOfList;
+
     @FindBy(css = ".oxd-pagination-page-item.oxd-pagination-page-item--previous-next")
     public WebElement btn_nextPage;
     @FindBy(xpath = "//*/div[@class=\"oxd-table-card\"]")
@@ -17,11 +18,14 @@ public class EmployeeListPage {
     @FindBy(xpath = "//*/div[@class=\"oxd-table-card\"]/div/div[3]/div")
     public List<WebElement> employeesNames;
 
-    @FindBy(xpath = "//*/div[@class=\"oxd-table-card\"]/div/div[3]/div")
-    public List<WebElement> txt_searchName;
+    @FindBy(css = ".oxd-autocomplete-wrapper")
+    public WebElement txt_searchName;
 
-    @FindBy(xpath = "i[class=\"oxd-icon bi-trash\"]")
-    public List<WebElement> deleteIcon;
+    @FindBy(css = ".oxd-button.oxd-button--medium.oxd-button--secondary.orangehrm-left-space")
+    public WebElement btn_search;
+
+    @FindBy(css = ".oxd-icon.bi-trash")
+    public WebElement deleteIcon;
 
 
 

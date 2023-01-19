@@ -43,32 +43,20 @@ public class WebFlows extends CommonOps {
             createLoginDetails(userName,pass);
         }
     }
-
-        @Step("Business Flow: Delete Employee")
-    public static void deleteEmployee(String firstName){
-        boolean find = findEmployee(firstName);
-        while (!find) {
-            UIActions.click(orangeHRMEmployeeListPage.btn_nextPage);
-            find = findEmployee(firstName);
-        }
-        List<WebElement> employeeList = driver.findElements(By.xpath("//*/div[@class=\"oxd-table-card\"]/div/div[3]/div"));
-        for (int i = 1 ; i <= employeeList.size(); i++){
-            if (employeeList.get(i-1).getText().equals(firstName))
-                UIActions.click(driver.findElement(By.xpath("//*/div[@class=\"oxd-table-card\"][" + i +"]/div/div[9]/div/button[1]")));
-        }
+    @Step("Business Flow: Search Employee By Name")
+    public static void searchEmployee(String firstName) throws InterruptedException {
+        UIActions.museHover(orangeHRMLeftMenuPage.btn_PIM);
+        action.moveToElement(orangeHRMEmployeeListPage.txt_searchName).click().sendKeys(firstName).build().perform();
+        UIActions.museHover(orangeHRMEmployeeListPage.btn_search);
+        Thread.sleep(3000);
+    }
+    @Step("Business Flow: Delete Employee")
+    public static void deleteEmployee(String firstName) throws InterruptedException {
+        searchEmployee(firstName);
+        Thread.sleep(6000);
+        UIActions.museHover(orangeHRMEmployeeListPage.deleteIcon);
         UIActions.click(orangeHRMEmployeeListPage.btn_yes);
     }
-    @Step("Business Flow: Find if Employee in This Page")
-    public static boolean findEmployee(String firstName){
-        boolean find = false;
-        List<WebElement> employeeList = driver.findElements(By.xpath("//*/div[@class=\"oxd-table-card\"]/div/div[3]/div"));
-        for (int i = 1 ; i <= employeeList.size(); i++){
-            if (employeeList.get(i-1).getText().equals(firstName))
-                find = true;
-        }
-        return find;
-    }
-
     @Step("Business Flow: Search And Verify Menu Option")
     public static void searchAndVerify(String textToSearch, String expected){
         UIActions.setSearch(textToSearch);
@@ -77,20 +65,20 @@ public class WebFlows extends CommonOps {
         else
             Verifications.verifyTextInElement(orangeHRMLeftMenuPage.Menu.get(0),expected);
     }
-
-    //From Old Test
-    @Step("Select Menu option")
-    public static void selectMenuOption(String menu){
-        UIActions.setSearch(menu);
-        UIActions.click(orangeHRMLeftMenuPage.Menu.get(0));
-    }
-
     @Step("Get The number in parentheses")
     public static int getNumberInParentheses(WebElement elem){
         int start = elem.getText().indexOf('(') + 1;
         int end = elem.getText().indexOf(')');
         String result = elem.getText().substring(start,end);
         return (int) Long.parseLong(result);
+    }
+
+
+    // From Old Test
+    @Step("Select Menu option")
+    public static void selectMenuOption(String menu){
+        UIActions.setSearch(menu);
+        UIActions.click(orangeHRMLeftMenuPage.Menu.get(0));
     }
 
 

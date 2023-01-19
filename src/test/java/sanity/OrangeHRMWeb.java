@@ -33,25 +33,22 @@ public class OrangeHRMWeb extends CommonOps {
         WebFlows.selectFromPageMenu(orangeHRMAdminMenu.btn_UserManagement, orangeHRMAdminMenu.link_Users);
         Verifications.verifyNumberOfElements(orangeHRMAdminUserPage.listOfUsers, WebFlows.getNumberInParentheses(orangeHRMAdminUserPage.numberOfList));
     }
-
     @Test(description = "Test03 - Create New Employee")
     @Description("This Test Create New Employee and verifies the new number of Employees")
-    public void Test03_CreateNewEmployee(){
+    public void Test03_CreateNewEmployee() throws InterruptedException {
         UIActions.museHover(orangeHRMLeftMenuPage.btn_PIM);
-        int currentNumber = WebFlows.getNumberInParentheses(orangeHRMEmployeeListPage.numberOfList);
+//        int currentNumber = WebFlows.getNumberInParentheses(orangeHRMEmployeeListPage.numberOfList);
         WebFlows.createNewEmployee("Sam", "One", "SamOne80","So!1qaz@2wsx");
         UIActions.museHover(orangeHRMLeftMenuPage.btn_PIM);
-        Verifications.verifyNumberOfElements(orangeHRMEmployeeListPage.listOfEmployees, currentNumber+1);
+        WebFlows.searchEmployee("sam");
+        Verifications.verifyNumberOfElements(orangeHRMEmployeeListPage.listOfEmployees, 1);
     }
-
     @Test(description = "Test04 - Delete Employee")
     @Description("This Test verifies The deletion of a Employee")
-    public void Test04_DeleteEmployee(){
+    public void Test04_DeleteEmployee() throws InterruptedException {
         UIActions.museHover(orangeHRMLeftMenuPage.btn_PIM);
-        int currentNumber = WebFlows.getNumberInParentheses(orangeHRMEmployeeListPage.numberOfList);
         WebFlows.deleteEmployee("Sam");
-        UIActions.museHover(orangeHRMLeftMenuPage.btn_PIM);
-        Verifications.verifyNumberOfElements(orangeHRMEmployeeListPage.listOfEmployees, currentNumber-1);
+        Verifications.verifyTextInElement(orangeHRMEmployeeListPage.numberOfList, "No Records Found");
     }
 
     @Test(description = "Test05 - Verify Menu Elements")
