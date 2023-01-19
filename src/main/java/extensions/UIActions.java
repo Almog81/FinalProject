@@ -43,6 +43,7 @@ public class UIActions extends CommonOps {
     }
     @Step("Muse Hover on Element")
     public static void museHover(WebElement elem){
+        wait.until(ExpectedConditions.visibilityOf(elem));
         js.executeScript("arguments[0].scrollIntoView(true);", elem);
         action.moveToElement(elem).click().build().perform();
     }

@@ -3,7 +3,7 @@
 <suite name="Web Suite" parallel="false">
     <parameter name="PlatformName" value="web"/>
     <parameter name="Location" value="online"/>
-    <test name="WebDB Test">
+    <test name="Web Test">
         <classes>
             <class name="sanity.OrangeHRMWebOnline"/>
         </classes>

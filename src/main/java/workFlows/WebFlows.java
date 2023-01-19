@@ -27,16 +27,25 @@ public class WebFlows extends CommonOps {
         UIActions.updateText(orangeHRMAddNewEmployee.txt_firstName, firstName);
         UIActions.updateText(orangeHRMAddNewEmployee.txt_lastName, lastName);
         UIActions.museHover(orangeHRMAddNewEmployee.switch_loginInfo);
-        UIActions.click(orangeHRMAddNewEmployee.switch_loginInfo);
-
+        createLoginDetails(userName,pass);
+        }
+    @Step("Business Flow: Create Login Details")
+    public static void createLoginDetails(String userName,String pass){
+        try {
         UIActions.updateText(orangeHRMAddNewEmployee.txt_userName, userName);
         UIActions.updateText(orangeHRMAddNewEmployee.txt_pass1, pass);
         UIActions.updateText(orangeHRMAddNewEmployee.txt_pass2, pass);
         UIActions.click(orangeHRMAddNewEmployee.btn_save);
+        }
+        catch(Exception e) {
+            UIActions.museHover(orangeHRMAddNewEmployee.switch_loginInfo);
+            createLoginDetails(userName,pass);
+        }
     }
-    @Step("Business Flow: Delete Employee")
+
+        @Step("Business Flow: Delete Employee")
     public static void deleteEmployee(String firstName){
-        Boolean find = findEmployee(firstName);
+        boolean find = findEmployee(firstName);
         while (!find) {
             UIActions.click(orangeHRMEmployeeListPage.btn_nextPage);
             find = findEmployee(firstName);
@@ -49,8 +58,8 @@ public class WebFlows extends CommonOps {
         UIActions.click(orangeHRMEmployeeListPage.btn_yes);
     }
     @Step("Business Flow: Find if Employee in This Page")
-    public static Boolean findEmployee(String firstName){
-        Boolean find = false;
+    public static boolean findEmployee(String firstName){
+        boolean find = false;
         List<WebElement> employeeList = driver.findElements(By.xpath("//*/div[@class=\"oxd-table-card\"]/div/div[3]/div"));
         for (int i = 1 ; i <= employeeList.size(); i++){
             if (employeeList.get(i-1).getText().equals(firstName))

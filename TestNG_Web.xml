@@ -5,7 +5,7 @@
     <parameter name="Location" value="local"/>
     <test name="Web Test">
         <classes>
-            <class name="sanity.OrangeHRMWeb"/>
+            <class name="sanity.OrangeHRMWebOnline"/>
         </classes>
     </test>
 </suite>

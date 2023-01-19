@@ -10,7 +10,7 @@ public class AddNewEmployee {
     @FindBy(css = "input[name='lastName']")
     public WebElement txt_lastName;
 
-    @FindBy(css = ".oxd-switch-wrapper>label")
+    @FindBy(css = ".oxd-switch-wrapper")
     public WebElement switch_loginInfo;
 
     @FindBy(xpath = "//*/form/div[1]/div[2]/div[3]/div/div[1]/div/div[2]/input")
