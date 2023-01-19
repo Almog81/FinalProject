@@ -5,6 +5,7 @@ import extensions.Verifications;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import utilities.CommonOps;
 
 import java.util.List;
@@ -26,7 +27,7 @@ public class WebFlows extends CommonOps {
         UIActions.click(orangeHRMPIMMenu.link_AddEmployee);
         UIActions.updateText(orangeHRMAddNewEmployee.txt_firstName, firstName);
         UIActions.updateText(orangeHRMAddNewEmployee.txt_lastName, lastName);
-        UIActions.museHover(orangeHRMAddNewEmployee.switch_loginInfo);
+        UIActions.click(orangeHRMAddNewEmployee.switch_loginInfo);
         createLoginDetails(userName,pass);
         }
     @Step("Business Flow: Create Login Details")

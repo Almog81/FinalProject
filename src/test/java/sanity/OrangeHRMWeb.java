@@ -31,25 +31,27 @@ public class OrangeHRMWeb extends CommonOps {
     public void Test02_verifyDefaultUsers(){
         UIActions.museHover(orangeHRMLeftMenuPage.btn_Admin);
         WebFlows.selectFromPageMenu(orangeHRMAdminMenu.btn_UserManagement, orangeHRMAdminMenu.link_Users);
-        Verifications.verifyNumberOfElements(orangeHRMAdminUserPage.listOfUsers, 1);
+        Verifications.verifyNumberOfElements(orangeHRMAdminUserPage.listOfUsers, WebFlows.getNumberInParentheses(orangeHRMAdminUserPage.numberOfList));
     }
 
     @Test(description = "Test03 - Create New Employee")
     @Description("This Test Create New Employee and verifies the new number of Employees")
     public void Test03_CreateNewEmployee(){
         UIActions.museHover(orangeHRMLeftMenuPage.btn_PIM);
+        int currentNumber = WebFlows.getNumberInParentheses(orangeHRMEmployeeListPage.numberOfList);
         WebFlows.createNewEmployee("Sam", "One", "SamOne80","So!1qaz@2wsx");
         UIActions.museHover(orangeHRMLeftMenuPage.btn_PIM);
-        Verifications.verifyNumberOfElements(orangeHRMEmployeeListPage.listOfEmployees, 2);
+        Verifications.verifyNumberOfElements(orangeHRMEmployeeListPage.listOfEmployees, currentNumber+1);
     }
 
     @Test(description = "Test04 - Delete Employee")
     @Description("This Test verifies The deletion of a Employee")
     public void Test04_DeleteEmployee(){
         UIActions.museHover(orangeHRMLeftMenuPage.btn_PIM);
+        int currentNumber = WebFlows.getNumberInParentheses(orangeHRMEmployeeListPage.numberOfList);
         WebFlows.deleteEmployee("Sam");
         UIActions.museHover(orangeHRMLeftMenuPage.btn_PIM);
-        Verifications.verifyNumberOfElements(orangeHRMEmployeeListPage.listOfEmployees, 1);
+        Verifications.verifyNumberOfElements(orangeHRMEmployeeListPage.listOfEmployees, currentNumber-1);
     }
 
     @Test(description = "Test05 - Verify Menu Elements")
