@@ -29,6 +29,7 @@ public class WebFlows extends CommonOps {
         UIActions.updateText(orangeHRMAddNewEmployee.txt_lastName, lastName);
         UIActions.click(orangeHRMAddNewEmployee.switch_loginInfo);
         createLoginDetails(userName,pass);
+        UIActions.click(orangeHRMAddNewEmployee.btn_save);
         }
     @Step("Business Flow: Create Login Details")
     public static void createLoginDetails(String userName,String pass){
@@ -36,7 +37,6 @@ public class WebFlows extends CommonOps {
         UIActions.updateText(orangeHRMAddNewEmployee.txt_userName, userName);
         UIActions.updateText(orangeHRMAddNewEmployee.txt_pass1, pass);
         UIActions.updateText(orangeHRMAddNewEmployee.txt_pass2, pass);
-        UIActions.click(orangeHRMAddNewEmployee.btn_save);
         }
         catch(Exception e) {
             UIActions.museHover(orangeHRMAddNewEmployee.switch_loginInfo);
