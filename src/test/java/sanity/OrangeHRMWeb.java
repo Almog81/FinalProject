@@ -61,7 +61,7 @@ public class OrangeHRMWeb extends CommonOps {
     @Test(description = "Test07 - Verify Search Menu Factuality", dataProvider = "DataProvider-Search", dataProviderClass = utilities.ManageDDT.class)
     @Description("This Test verifies The Search Factuality, Using Data Driving Test")
     public void Test07_verifySearchMenuFactuality(String text, String expected){
-        driver.navigate().refresh();
+        UIActions.refreshAction();
         WebFlows.searchAndVerify(text, expected);
     }
 

@@ -57,4 +57,9 @@ public class UIActions extends CommonOps {
         js.executeScript("arguments[0].scrollIntoView(true);", elem);
         elem.sendKeys(value);
     }
+
+    @Step("Refresh The Current Page")
+    public static void refreshAction(){
+        driver.navigate().refresh();
+    }
 }
