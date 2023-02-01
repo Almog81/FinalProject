@@ -9,7 +9,6 @@ import utilities.CommonOps;
 import workFlows.DatabaseFlows;
 import workFlows.WebFlows;
 
-import javax.swing.text.Utilities;
 
 
 @Listeners(utilities.Listeners.class)
@@ -18,11 +17,7 @@ public class OrangeHRMWeb extends CommonOps {
     @Test(description = "Test01 - verify Logo")
     @Description("This Test login and verifies the logo")
     public void Test01_verifyLogo(){
-        if (Location.equalsIgnoreCase("online"))
-            WebFlows.loginAction(getData("UserName"),getData("Password"));
-        else if (Location.equalsIgnoreCase("local")) {
-            DatabaseFlows.loginDB();
-        }
+        WebFlows.loginAction();
         Verifications.verifyTextElementIsDisplayed(orangeHRMLeftMenuPage.logoBanner);
     }
 
@@ -37,7 +32,6 @@ public class OrangeHRMWeb extends CommonOps {
     @Description("This Test Create New Employee and verifies the new number of Employees")
     public void Test03_CreateNewEmployee() throws InterruptedException {
         UIActions.museHover(orangeHRMLeftMenuPage.btn_PIM);
-//        int currentNumber = WebFlows.getNumberInParentheses(orangeHRMEmployeeListPage.numberOfList);
         WebFlows.createNewEmployee("Sam", "One", "SamOne80","So!1qaz@2wsx");
         UIActions.museHover(orangeHRMLeftMenuPage.btn_PIM);
         WebFlows.searchEmployee("sam");
@@ -48,6 +42,7 @@ public class OrangeHRMWeb extends CommonOps {
     public void Test04_DeleteEmployee() throws InterruptedException {
         UIActions.museHover(orangeHRMLeftMenuPage.btn_PIM);
         WebFlows.deleteEmployee("Sam");
+        WebFlows.searchEmployee("sam");
         Verifications.verifyTextInElement(orangeHRMEmployeeListPage.numberOfList, "No Records Found");
     }
 

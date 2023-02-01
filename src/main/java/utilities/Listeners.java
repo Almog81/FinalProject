@@ -1,14 +1,7 @@
 package utilities;
-
-
-import io.qameta.allure.Attachment;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterMethod;
-
 import java.io.File;
 
 public class Listeners extends CommonOps implements ITestListener {
@@ -73,11 +66,5 @@ public class Listeners extends CommonOps implements ITestListener {
     public void onTestSkipped(ITestResult test) {
         System.out.println("---------------------- Skipping " + test.getMethod().getDescription() + " ------------------");
     }
-
-//    @Attachment(value = "Page Screen-Shot",type = "image/png")
-//    public byte[] saveScreenshot(){
-//        System.out.println("Start Screenshot");
-//        return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
-//    }
 
 }
