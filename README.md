@@ -60,4 +60,4 @@ The approach to the project is a complete separation between the testing infrast
 
 ### _Known Issues:_
  - Sometimes can be conflicts with some dependencies the applications are using. Hence, the project is for DEMO purpose only. In production it should be divided into several projects.
- - With different resolutions, Tests that use the image could fail (like Test 06 in OrangeHRMWeb.java)
+ - With different resolutions, Tests using images may fail (like Test 06 in OrangeHRMWeb.java)
