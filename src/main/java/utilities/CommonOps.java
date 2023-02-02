@@ -61,7 +61,12 @@ public class CommonOps extends Base {
             return doc.getElementsByTagName(nodeName).item(0).getTextContent();
     }
 
-    @Parameters({"Location"})
+    /*
+    Method Name: initBrowser
+    Method Description: This Method get the data from XML configuration file
+    Method Parameters: String - browserType, String - location
+    Method Return:
+    */
     public static void initBrowser(String browserType, String location) {
         if (browserType.equalsIgnoreCase("Chrome"))
             driver = initChromeDriver();
