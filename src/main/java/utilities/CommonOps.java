@@ -84,7 +84,6 @@ public class CommonOps extends Base {
         else if (Location.equalsIgnoreCase("Online"))
             driver.get(getData("Online-URL"));
         ManagePages.initOrangeHRM();
-
     }
 
     private static WebDriver initChromeDriver() {
@@ -132,27 +131,22 @@ public class CommonOps extends Base {
         dc.setCapability("chromeOptions",opt);
         dc.setBrowserName("chrome");
         driver = new ChromeDriver(dc);
-
         driver.manage().timeouts().implicitlyWait(Long.parseLong(getData("Timeout")) , TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, Long.parseLong(getData("Timeout")));
         action = new Actions(driver);
-
         ManagePages.initTodoList();
     }
 
     public static void  initDesktop(){
-
         dc.setCapability("app",getData("DesktopAppPath"));
         try {
             driver = new WindowsDriver(new URL(getData("DesktopServer")),dc);
         } catch (Exception e) {
             System.out.println("Can not Connect to the Server, See Details: " + e);
         }
-
         driver.manage().timeouts().implicitlyWait(Long.parseLong(getData("Timeout")) , TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, Long.parseLong(getData("Timeout")));
         action = new Actions(driver);
-
         ManagePages.initCalculator();
     }
 
@@ -171,11 +165,9 @@ public class CommonOps extends Base {
         else if (PlatformName.equalsIgnoreCase("desktop"))
             initDesktop();
         else
-
             throw new RuntimeException("Invalid Platform Name");
         softAssert = new SoftAssert();
         screen = new Screen();
-
         ManageDB.openConnection(getData("dbURL"),getData("dbUserName"),getData("dbPassword"));
     }
 
@@ -197,7 +189,5 @@ public class CommonOps extends Base {
             return ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
         else
             return ((TakesScreenshot)mobileDriver).getScreenshotAs(OutputType.BYTES);
-
     }
-
 }
