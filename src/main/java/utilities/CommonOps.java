@@ -63,7 +63,7 @@ public class CommonOps extends Base {
 
     /*
     Method Name: initBrowser
-    Method Description: This Method get the data from XML configuration file
+    Method Description: This Method checks the type of the browser and initializes the corresponding driver.
     Method Parameters: String - browserType, String - location
     Method Return:
     */
@@ -90,19 +90,31 @@ public class CommonOps extends Base {
             driver.get(getData("Online-URL"));
         ManagePages.initOrangeHRM();
     }
-
+    /*
+    Method Name: initChromeDriver
+    Method Description: This Method initializes the Chrome driver
+    Method Return: WebDriver - driver
+    */
     private static WebDriver initChromeDriver() {
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         return driver;
     }
-
+    /*
+    Method Name: initChromeDriver
+    Method Description: This Method initializes the Firefox driver
+    Method Return: WebDriver - driver
+    */
     private static WebDriver initFirefoxDriver() {
         WebDriverManager.firefoxdriver().setup();
         WebDriver driver = new FirefoxDriver();
         return driver;
     }
-
+    /*
+    Method Name: initChromeDriver
+    Method Description: This Method initializes the Internet Explorer driver
+    Method Return: WebDriver - driver
+    */
     private static WebDriver initIEDriver() {
         WebDriverManager.iedriver().setup();
         WebDriver driver = new InternetExplorerDriver();
