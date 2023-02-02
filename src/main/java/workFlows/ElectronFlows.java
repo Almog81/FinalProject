@@ -15,6 +15,12 @@ public class ElectronFlows extends CommonOps {
         UIActions.sendKeysAction(todoMain.txt_CreateTask, Keys.ENTER);
     }
 
+    @Step("Business Flow: create Number of Tasks")
+    public static void createNumberOfTasks(int taskNumber){
+        for (int i = 1; i<taskNumber ; i++)
+            ElectronFlows.createNewTask("Task 0" + i);
+    }
+
     @Step("Business Flow: get Task List Size")
     public static int getTaskListSize(){
         return todoMain.list_taskList.size();

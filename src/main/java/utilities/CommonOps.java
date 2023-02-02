@@ -117,6 +117,7 @@ public class CommonOps extends Base {
         mobileDriver.manage().timeouts().implicitlyWait(Long.parseLong(getData("Timeout")) , TimeUnit.SECONDS);
         wait = new WebDriverWait(mobileDriver, Long.parseLong(getData("Timeout")));
         touchAction = new TouchAction<>(mobileDriver);
+        js = (JavascriptExecutor) driver;
     }
 
     public static void  initAPI(){
@@ -134,6 +135,7 @@ public class CommonOps extends Base {
         driver.manage().timeouts().implicitlyWait(Long.parseLong(getData("Timeout")) , TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, Long.parseLong(getData("Timeout")));
         action = new Actions(driver);
+        js = (JavascriptExecutor) driver;
         ManagePages.initTodoList();
     }
 
@@ -147,6 +149,7 @@ public class CommonOps extends Base {
         driver.manage().timeouts().implicitlyWait(Long.parseLong(getData("Timeout")) , TimeUnit.SECONDS);
         wait = new WebDriverWait(driver, Long.parseLong(getData("Timeout")));
         action = new Actions(driver);
+        js = (JavascriptExecutor) driver;
         ManagePages.initCalculator();
     }
 

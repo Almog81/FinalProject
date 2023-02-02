@@ -29,8 +29,7 @@ public class TodoListElectron extends CommonOps {
     @Test(description = "Test03 - complete task")
     @Description("This Test create 5 Tasks and verifies it in The list task")
     public void Test03_completeTask() throws InterruptedException {
-        for (int i = 1; i<5 ; i++)
-            ElectronFlows.createNewTask("Task 0" + i);
+        ElectronFlows.createNumberOfTasks(5);
         ElectronFlows.toggleTask(ElectronFlows.findTaskByName("Task 02"));
         Verifications.verifyNumbers(ElectronFlows.getCompletedTaskListSize() ,1);
         ElectronFlows.emptyTaskList();
