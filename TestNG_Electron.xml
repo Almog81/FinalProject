@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Web Suite" parallel="false">
     <parameter name="PlatformName" value="electron"/>
+    <parameter name="Location" value="local"/>
     <test name="Electron Test">
         <classes>
             <class name="sanity.TodoListElectron"/>

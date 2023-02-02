@@ -2,9 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Web Suite" parallel="false">
     <parameter name="PlatformName" value="api"/>
-    <!-- <listeners>
-        <listener class-name="utilities.Listeners"/>
-    </listeners> -->
+    <parameter name="Location" value="local"/>
     <test name="API Test">
         <classes>
             <class name="sanity.StudentAPI"/>
