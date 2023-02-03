@@ -101,7 +101,7 @@ public class CommonOps extends Base {
         return driver;
     }
     /*
-    Method Name: initChromeDriver
+    Method Name: initFirefoxDriver
     Method Description: This Method initializes the Firefox driver
     Method Return: WebDriver - driver
     */
@@ -111,7 +111,7 @@ public class CommonOps extends Base {
         return driver;
     }
     /*
-    Method Name: initChromeDriver
+    Method Name: initIEDriver
     Method Description: This Method initializes the Internet Explorer driver
     Method Return: WebDriver - driver
     */
@@ -120,7 +120,10 @@ public class CommonOps extends Base {
         WebDriver driver = new InternetExplorerDriver();
         return driver;
     }
-
+    /*
+    Method Name: initMobile
+    Method Description: This Method initializes a mobile app and sets up the necessary capabilities for running tests on the app.
+    */
     public static void initMobile(){
         dc.setCapability(MobileCapabilityType.UDID, getData("UDID"));
         dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE,getData("AppPackage"));
@@ -136,12 +139,18 @@ public class CommonOps extends Base {
         touchAction = new TouchAction<>(mobileDriver);
         js = (JavascriptExecutor) driver;
     }
-
+    /*
+    Method Name: initAPI
+    Method Description: This Method initializes an API testing environment.
+    */
     public static void  initAPI(){
         RestAssured.baseURI = getData("urlAPI");
         httpRequest = RestAssured.given().auth().preemptive().basic(getData("Api_UserName"),getData("Api_Password"));
     }
-
+    /*
+    Method Name: initBrowser
+    Method Description: This Method initializes an API testing environment.
+    */
     public static void  initElectron(){
         System.setProperty("webdriver.chrome.driver",getData("ElectronDriverPath"));
         ChromeOptions opt = new ChromeOptions();
