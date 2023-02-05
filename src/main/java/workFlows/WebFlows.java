@@ -40,8 +40,8 @@ public class WebFlows extends CommonOps {
     public static void createLoginDetails(String userName,String pass){
         try {
         UIActions.updateText(orangeHRMAddNewEmployee.txt_userName, userName);
-        UIActions.updateText(orangeHRMAddNewEmployee.txt_pass1, pass);
-        UIActions.updateText(orangeHRMAddNewEmployee.txt_pass2, pass);
+        UIActions.updateText(orangeHRMAddNewEmployee.txt_password.get(0), pass);
+        UIActions.updateText(orangeHRMAddNewEmployee.txt_password.get(1), pass);
         }
         catch(Exception e) {
             UIActions.museHover(orangeHRMAddNewEmployee.switch_loginInfo);
