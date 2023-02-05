@@ -64,10 +64,10 @@ public class CommonOps extends Base {
     /*
     Method Name: initBrowser
     Method Description: This Method checks the type of the browser and initializes the corresponding driver.
-    Method Parameters: String - browserType, String - location
+    Method Parameters: String - browserType
     Method Return:
     */
-    public static void initBrowser(String browserType, String location) {
+    public static void initBrowser(String browserType) {
         if (browserType.equalsIgnoreCase("Chrome"))
             driver = initChromeDriver();
         else if (browserType.equalsIgnoreCase("firefox"))
@@ -83,10 +83,9 @@ public class CommonOps extends Base {
         js = (JavascriptExecutor) driver;
 
         driver.manage().window().maximize();
-        Location = location;
-        if (Location.equalsIgnoreCase("local"))
+        if (Environment.equalsIgnoreCase("local"))
             driver.get(getData("Local-URL"));
-        else if (Location.equalsIgnoreCase("Online"))
+        else if (Environment.equalsIgnoreCase("Online"))
             driver.get(getData("Online-URL"));
         ManagePages.initOrangeHRM();
     }
@@ -148,8 +147,8 @@ public class CommonOps extends Base {
         httpRequest = RestAssured.given().auth().preemptive().basic(getData("Api_UserName"),getData("Api_Password"));
     }
     /*
-    Method Name: initBrowser
-    Method Description: This Method initializes an API testing environment.
+    Method Name: initElectron
+    Method Description: This Method initializes an Electron testing environment.
     */
     public static void  initElectron(){
         System.setProperty("webdriver.chrome.driver",getData("ElectronDriverPath"));
@@ -164,7 +163,10 @@ public class CommonOps extends Base {
         js = (JavascriptExecutor) driver;
         ManagePages.initTodoList();
     }
-
+    /*
+    Method Name: initDesktop
+    Method Description: This Method initializes an Desktop testing environment.
+    */
     public static void  initDesktop(){
         dc.setCapability("app",getData("DesktopAppPath"));
         try {
@@ -178,13 +180,18 @@ public class CommonOps extends Base {
         js = (JavascriptExecutor) driver;
         ManagePages.initCalculator();
     }
-
+    /*
+    Method Name: startSession
+    Method Description: This Method initializes a Test session based on the platform Name
+    Method Parameters: String - The Platform Name, String - The location of The Test environment
+    */
     @BeforeClass
-    @Parameters({"PlatformName","Location"})
-    public static void startSession(String platform, String location) {
+    @Parameters({"PlatformName","environment"})
+    public static void startSession(String platform, String environment) {
         PlatformName = platform;
+        Environment = environment;
         if(PlatformName.equalsIgnoreCase("web"))
-            initBrowser(getData("BrowserName"),location);
+            initBrowser(getData("BrowserName"));
         else if (PlatformName.equalsIgnoreCase("mobile"))
             initMobile();
         else if (PlatformName.equalsIgnoreCase("api"))

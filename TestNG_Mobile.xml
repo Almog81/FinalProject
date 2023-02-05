@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Web Suite" parallel="false">
     <parameter name="PlatformName" value="mobile"/>
-    <parameter name="Location" value="local"/>
+    <parameter name="environment" value="local"/>
     <test name="Mobile Test">
         <classes>
             <class name="sanity.UnitConverterMobile"/>

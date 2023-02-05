@@ -30,10 +30,10 @@ public class Base {
     protected static SoftAssert softAssert;
     protected static Screen screen;
     protected static String PlatformName;
+    protected static String Environment;
 
     //Web
     protected static WebDriver driver;
-    protected static String Location;
 
     //Mobile
     protected static AppiumDriver mobileDriver;

@@ -10,9 +10,9 @@ import utilities.CommonOps;
 public class WebFlows extends CommonOps {
     @Step("Business Flow: Login")
     public static void loginAction(){
-        if (Location.equalsIgnoreCase("online"))
+        if (Environment.equalsIgnoreCase("online"))
             WebFlows.onlineLogin(getData("UserName"),getData("Password"));
-        else if (Location.equalsIgnoreCase("local")) {
+        else if (Environment.equalsIgnoreCase("local")) {
             DatabaseFlows.loginDB();
         }
     }
