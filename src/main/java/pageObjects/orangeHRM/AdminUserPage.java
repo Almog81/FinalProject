@@ -10,6 +10,6 @@ public class AdminUserPage {
     @FindBy(css = ".oxd-table-card")
     public List<WebElement> listOfUsers;
 
-    @FindBy(css = ".orangehrm-horizontal-padding.orangehrm-vertical-padding>.oxd-text.oxd-text--span")
+    @FindBy(css = ".orangehrm-horizontal-padding>.oxd-text")
     public WebElement numberOfList;
 }
