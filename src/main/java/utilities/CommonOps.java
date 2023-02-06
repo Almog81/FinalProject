@@ -89,6 +89,7 @@ public class CommonOps extends Base {
             driver.get(getData("Online-URL"));
         ManagePages.initOrangeHRM();
     }
+
     /*
     Method Name: initChromeDriver
     Method Description: This Method initializes the Chrome driver
@@ -99,6 +100,7 @@ public class CommonOps extends Base {
         WebDriver driver = new ChromeDriver();
         return driver;
     }
+
     /*
     Method Name: initFirefoxDriver
     Method Description: This Method initializes the Firefox driver
@@ -109,6 +111,7 @@ public class CommonOps extends Base {
         WebDriver driver = new FirefoxDriver();
         return driver;
     }
+
     /*
     Method Name: initIEDriver
     Method Description: This Method initializes the Internet Explorer driver
@@ -119,6 +122,7 @@ public class CommonOps extends Base {
         WebDriver driver = new InternetExplorerDriver();
         return driver;
     }
+
     /*
     Method Name: initMobile
     Method Description: This Method initializes a mobile app and sets up the necessary capabilities for running tests on the app.
@@ -138,6 +142,7 @@ public class CommonOps extends Base {
         touchAction = new TouchAction<>(mobileDriver);
         js = (JavascriptExecutor) driver;
     }
+
     /*
     Method Name: initAPI
     Method Description: This Method initializes an API testing environment.
@@ -146,6 +151,7 @@ public class CommonOps extends Base {
         RestAssured.baseURI = getData("urlAPI");
         httpRequest = RestAssured.given().auth().preemptive().basic(getData("Api_UserName"),getData("Api_Password"));
     }
+
     /*
     Method Name: initElectron
     Method Description: This Method initializes an Electron testing environment.
@@ -163,6 +169,7 @@ public class CommonOps extends Base {
         js = (JavascriptExecutor) driver;
         ManagePages.initTodoList();
     }
+
     /*
     Method Name: initDesktop
     Method Description: This Method initializes an Desktop testing environment.
@@ -180,6 +187,7 @@ public class CommonOps extends Base {
         js = (JavascriptExecutor) driver;
         ManagePages.initCalculator();
     }
+
     /*
     Method Name: startSession
     Method Description: This Method initializes a Test session based on the platform Name
