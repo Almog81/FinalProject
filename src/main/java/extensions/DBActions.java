@@ -11,6 +11,12 @@ import java.util.List;
 
 public class DBActions extends CommonOps {
 
+    /*
+    Method Name: getCredentials
+    Method Description: A method to retrieve credentials from a database using a SQL query
+    Method Parameters: String query: a SQL query to retrieve the data from the database
+    Method Return: List<String>: a list of strings representing the credentials (username and password) retrieved from the database.
+     */
     @Step("Get Data Credentials From Database")
     public static List<String> getCredentials(String query){
         List<String> credentials = new ArrayList<String>();

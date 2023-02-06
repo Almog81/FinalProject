@@ -21,12 +21,24 @@ import java.time.Duration;
 
 public class MobileAction extends CommonOps {
 
+    /*
+    Method Name: updateText
+    Method Description: This method updates the text of a MobileElement
+    Method Parameters: MobileElement elem - The mobile element to be updated, String text - The text to be entered
+    Method Return: None
+     */
     @Step("Update Text Element")
     public static void updateText(MobileElement elem, String text){
         wait.until(ExpectedConditions.visibilityOf(elem));
         elem.sendKeys(text);
     }
 
+    /*
+    Method Name: tap
+    Method Description: This method performs a tap action on a MobileElement
+    Method Parameters: MobileElement elm - The mobile element to be tapped
+    Method Return: None
+     */
     @Step("Tap on Element")
     public static void tap(MobileElement elm){
         wait.until(ExpectedConditions.elementToBeClickable(elm));
@@ -35,6 +47,12 @@ public class MobileAction extends CommonOps {
                 .perform();
     }
 
+    /*
+    Method Name: swipe
+    Method Description: This method performs a swipe action in a specified direction
+    Method Parameters: Direction dir - The direction of the swipe (DOWN, UP, LEFT, RIGHT)
+    Method Return: void
+     */
     @Step("Swipe")
     public static void swipe(Direction dir) {
         System.out.println("swipeScreen(): dir: '" + dir + "'"); // always log your actions
@@ -94,6 +112,12 @@ public class MobileAction extends CommonOps {
         }
     }
 
+    /*
+    Method Name: zoom
+    Method Description: A method that performs the zoom action on a MobileElement.
+    Method Parameters: MobileElement elem.
+    Method Return: None.
+     */
     @Step("Zoom Element")
     public static void zoom(MobileElement elem){
         wait.until(ExpectedConditions.visibilityOf(elem));
@@ -113,6 +137,12 @@ public class MobileAction extends CommonOps {
         action.add(finger1).add(finger2).perform();
     }
 
+    /*
+    Method Name: pinch
+    Method Description: This method performs a pinch gesture on the given MobileElement.
+    Method Parameters: MobileElement elem
+    Method Return: None
+     */
     @Step("Pinch")
     public static void pinch(MobileElement elem){
         wait.until(ExpectedConditions.visibilityOf(elem));
@@ -132,6 +162,12 @@ public class MobileAction extends CommonOps {
         action.add(finger1).add(finger2).perform();
     }
 
+    /*
+    Method Name: dragAndDrop
+    Method Description: This method performs a drag and drop gesture on two given MobileElement.
+    Method Parameters: MobileElement start, MobileElement finish
+    Method Return: None
+     */
     @Step("Drag And Drop")
     public static void dragAndDrop(MobileElement start, MobileElement finish) {
         touchAction.press(new ElementOption()
@@ -141,6 +177,12 @@ public class MobileAction extends CommonOps {
                 .perform();
     }
 
+    /*
+    Method Name: longPress
+    Method Description: This method performs a long press gesture on the given MobileElement.
+    Method Parameters: MobileElement elem, int duration
+    Method Return: None
+     */
     @Step("Long Press")
     public static void longPress(MobileElement elem, int duration) {
         touchAction.longPress(new LongPressOptions()
