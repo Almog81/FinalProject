@@ -63,9 +63,9 @@ public class CommonOps extends Base {
 
     /*
     Method Name: initBrowser
-    Method Description: This Method checks the type of the browser and initializes the corresponding driver.
-    Method Parameters: String - browserType
-    Method Return:
+    Method Description: Initializes the WebDriver for the specified browser.
+    Method Parameters: browserType (String) - The type of browser (Chrome, Firefox, or Internet Explorer) to initialize.
+    Method Return: None
     */
     public static void initBrowser(String browserType) {
         if (browserType.equalsIgnoreCase("Chrome"))
@@ -92,8 +92,9 @@ public class CommonOps extends Base {
 
     /*
     Method Name: initChromeDriver
-    Method Description: This Method initializes the Chrome driver
-    Method Return: WebDriver - driver
+    Method Description: Initializes the Chrome Driver.
+    Method Parameters: None
+    Method Return: driver (WebDriver) - The instance of the Chrome driver.
     */
     private static WebDriver initChromeDriver() {
         WebDriverManager.chromedriver().setup();
@@ -103,8 +104,9 @@ public class CommonOps extends Base {
 
     /*
     Method Name: initFirefoxDriver
-    Method Description: This Method initializes the Firefox driver
-    Method Return: WebDriver - driver
+    Method Description: Initializes the Firefox Driver.
+    Method Parameters: None
+    Method Return: driver (WebDriver) - The instance of the Firefox driver.
     */
     private static WebDriver initFirefoxDriver() {
         WebDriverManager.firefoxdriver().setup();
@@ -114,8 +116,9 @@ public class CommonOps extends Base {
 
     /*
     Method Name: initIEDriver
-    Method Description: This Method initializes the Internet Explorer driver
-    Method Return: WebDriver - driver
+    Method Description: Initializes the Internet Explorer Driver.
+    Method Parameters: None
+    Method Return: driver (WebDriver) - The instance of the Internet Explorer driver.
     */
     private static WebDriver initIEDriver() {
         WebDriverManager.iedriver().setup();
@@ -125,7 +128,9 @@ public class CommonOps extends Base {
 
     /*
     Method Name: initMobile
-    Method Description: This Method initializes a mobile app and sets up the necessary capabilities for running tests on the app.
+    Method Description: Initializes the Mobile Driver for Android.
+    Method Parameters: None
+    Method Return: None
     */
     public static void initMobile(){
         dc.setCapability(MobileCapabilityType.UDID, getData("UDID"));
@@ -145,7 +150,9 @@ public class CommonOps extends Base {
 
     /*
     Method Name: initAPI
-    Method Description: This Method initializes an API testing environment.
+    Method Description: Initializes the API for REST calls.
+    Method Parameters: None
+    Method Return: None
     */
     public static void  initAPI(){
         RestAssured.baseURI = getData("urlAPI");
@@ -154,7 +161,9 @@ public class CommonOps extends Base {
 
     /*
     Method Name: initElectron
-    Method Description: This Method initializes an Electron testing environment.
+    Method Description: Initializes the Electron driver for the specified application.
+    Method Parameters: None
+    Method Return: None
     */
     public static void  initElectron(){
         System.setProperty("webdriver.chrome.driver",getData("ElectronDriverPath"));
@@ -172,7 +181,9 @@ public class CommonOps extends Base {
 
     /*
     Method Name: initDesktop
-    Method Description: This Method initializes an Desktop testing environment.
+    Method Description: Initializes the Windows Desktop Driver for the specified application.
+    Method Parameters: None
+    Method Return: None
     */
     public static void  initDesktop(){
         dc.setCapability("app",getData("DesktopAppPath"));
@@ -190,8 +201,9 @@ public class CommonOps extends Base {
 
     /*
     Method Name: startSession
-    Method Description: This Method initializes a Test session based on the platform Name
-    Method Parameters: String - The Platform Name, String - The location of The Test environment
+    Method Description: Start a session for the specified platform (web, mobile, API, Electron, or Desktop).
+    Method Parameters: platform (String) - The type of platform to start a session for. environment (String) - The type of environment (local or online).
+    Method Return: None
     */
     @BeforeClass
     @Parameters({"PlatformName","environment"})
@@ -215,6 +227,12 @@ public class CommonOps extends Base {
         ManageDB.openConnection(getData("dbURL"),getData("dbUserName"),getData("dbPassword"));
     }
 
+    /*
+    Method Name: closeSession
+    Method Description: Closes the active session, Depending on the platform.
+    Method Parameters: None
+    Method Return: None
+     */
     @AfterClass
     public static void closeSession(){
         if (!PlatformName.equalsIgnoreCase("api")){
@@ -225,6 +243,12 @@ public class CommonOps extends Base {
         }
     }
 
+    /*
+    Method Name: saveScreenshot
+    Method Description: This method takes a screenshot of the current page and saves it as a png image.
+    Method Parameters: None
+    Method Return: A byte array representing the screenshot image.
+     */
     @Attachment(value = "Page Screen-Shot",type = "image/png")
     public byte[] saveScreenshot(){
         System.out.println("Start Screenshot");
