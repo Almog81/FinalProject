@@ -26,5 +26,4 @@ public class LeftMenuPage {
 
     @FindBy(xpath = "//*/span[text()='My Info']")
     public WebElement btn_MyInfo;
-
 }

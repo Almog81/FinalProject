@@ -58,11 +58,9 @@ public class MainPage {
     @FindBy(xpath = "//*[@AutomationId='clearButton']")
     public WebElement btn_clear;
 
-
     //Result
     @FindBy(xpath = "//*[@AutomationId='CalculatorResults']")
     public WebElement field_result;
-//    @FindBy(className = "TextBlock") ///*[@AutomationId='TextContainer']
-//    public  List<WebElement> field_result;
+
 
 }

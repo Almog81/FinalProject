@@ -34,8 +34,6 @@ public class Listeners extends CommonOps implements ITestListener {
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-
-
             //Delete File
             File file = new File("./test-recordings/"+ test.getName()+".avi");
             if (file.delete())
@@ -49,7 +47,6 @@ public class Listeners extends CommonOps implements ITestListener {
         System.out.println("---------------------- " + test.getMethod().getDescription() + " Failed ------------------");
         if (!PlatformName.equalsIgnoreCase("api")){
             saveScreenshot();
-
             //Stop Recording
             try {
                 MonteScreenRecorder.stopRecord();
@@ -66,5 +63,4 @@ public class Listeners extends CommonOps implements ITestListener {
     public void onTestSkipped(ITestResult test) {
         System.out.println("---------------------- Skipping " + test.getMethod().getDescription() + " ------------------");
     }
-
 }

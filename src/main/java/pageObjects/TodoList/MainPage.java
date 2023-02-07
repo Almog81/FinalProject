@@ -12,7 +12,6 @@ public class MainPage {
     @FindBy(xpath = "//*[@placeholder='Create a task']")
     public WebElement txt_CreateTask;
 
-
     //Tasks
     @FindBy(className = "taskWrapper_2u8dN")
     public List<WebElement> list_taskList;

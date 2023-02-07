@@ -23,7 +23,4 @@ public class AddNewEmployee {
 
     @FindBy(css = "button[type=\"submit\"]")
     public WebElement btn_save;
-
-
-
 }

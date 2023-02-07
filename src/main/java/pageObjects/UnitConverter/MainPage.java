@@ -29,7 +29,6 @@ public class MainPage {
     @AndroidFindBy(xpath = "//*[contains(@id, 'input')]")
     public AndroidElement txt_input;
 
-
     @AndroidFindBy(xpath = "//*[contains(@id, 'selector')]")
     public AndroidElement selector_Unit;
 

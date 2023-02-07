@@ -18,5 +18,4 @@ public class AdminMenu {
 
     @FindBy(xpath = "//*/a[text()='Work Shifts']")
     public WebElement link_WorkShifts;
-
 }

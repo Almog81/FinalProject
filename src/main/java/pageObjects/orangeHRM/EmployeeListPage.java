@@ -22,14 +22,10 @@ public class EmployeeListPage {
     @FindBy(css = ".oxd-icon.bi-trash")
     public WebElement deleteIcon;
 
-
-
-
     //After click on delete employee
     @FindBy(css = ".oxd-button--label-danger.orangehrm-button-margin")
     public WebElement btn_yes;
 
     @FindBy(xpath = ".oxd-button--text.orangehrm-button-margin")
     public WebElement btn_no;
-
 }

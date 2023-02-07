@@ -9,7 +9,6 @@ public class PIMMenu {
     @FindBy(xpath = "//*/span[text()='Configuration ']")
     public WebElement btn_UserManagement;
 
-
     //Links List
     @FindBy(xpath = "//*/a[text()='Employee List']")
     public WebElement link_EmployeeList;

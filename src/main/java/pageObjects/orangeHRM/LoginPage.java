@@ -13,6 +13,4 @@ public class LoginPage {
 
     @FindBy(className = "oxd-button")
     public WebElement btn_Login;
-
-
 }
