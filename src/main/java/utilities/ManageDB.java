@@ -6,9 +6,7 @@ public class ManageDB extends CommonOps{
     /*
     Method Name: openConnection
     Method Description: Open a connection to a database using the specified URL, user and password
-    Method Parameters: String dbURL - the URL of the database,
-                       String user - the username to use for the connection,
-                       String pass - the password to use for the connection.
+    Method Parameters: String dbURL - the URL of the database, String user - the username to use for the connection, String pass - the password to use for the connection.
     Method Return: None
      */
     public static void openConnection (String dbURL, String user, String pass){

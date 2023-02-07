@@ -54,5 +54,4 @@ public class ManageDDT extends CommonOps{
         }
         return lines;
     }
-
 }

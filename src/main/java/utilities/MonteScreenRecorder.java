@@ -18,6 +18,12 @@ import static org.monte.media.VideoFormatKeys.*;
 
 public class MonteScreenRecorder extends ScreenRecorder
 {
+    /*
+    Method Name: MonteScreenRecorder
+    Method Description: Constructor to initialize the values of GraphicsConfiguration, Rectangle captureArea, Format fileFormat, Format screenFormat, Format mouseFormat, Format audioFormat, File movieFolder, and name.
+    Method Parameters: GraphicsConfiguration cfg, Rectangle captureArea, Format fileFormat, Format screenFormat, Format mouseFormat, Format audioFormat, File movieFolder, and String name.
+    Method Return: None
+     */
     public static ScreenRecorder screenRecorder;
     public String name;
     public MonteScreenRecorder(GraphicsConfiguration cfg, Rectangle captureArea, Format fileFormat,
@@ -27,6 +33,12 @@ public class MonteScreenRecorder extends ScreenRecorder
         this.name = name;
     }
 
+    /*
+    Method Name: startRecord
+    Method Description: Start the recording of the screen.
+    Method Parameters: String methodName.
+    Method Return: None
+     */
     @Override
     protected File createMovieFile(Format fileFormat) throws IOException {
         if (!movieFolder.exists()) {
@@ -40,6 +52,12 @@ public class MonteScreenRecorder extends ScreenRecorder
                 name + "." + Registry.getInstance().getExtension(fileFormat));
     }
 
+    /*
+    Method Name: startRecord
+    Method Description: Start the recording of the screen.
+    Method Parameters: String methodName.
+    Method Return: None
+     */
     public static void startRecord(String methodName) throws Exception {
         File file = new File("./test-recordings/");
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -59,6 +77,12 @@ public class MonteScreenRecorder extends ScreenRecorder
         screenRecorder.start();
     }
 
+    /*
+    Method Name: stopRecord
+    Method Description: Stop the recording of the screen.
+    Method Parameters: None.
+    Method Return: None
+     */
     public static void stopRecord() throws Exception {
         screenRecorder.stop();
         System.out.println("Recorded Screen Cast File Stop Recording");

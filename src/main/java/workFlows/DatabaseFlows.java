@@ -11,6 +11,12 @@ import utilities.CommonOps;
 import java.util.List;
 
 public class DatabaseFlows extends CommonOps {
+    /*
+    Method Name: loginDB
+    Method Description: A method for logging in to OrangeHRM using database credentials.
+    Method Parameters: None
+    Method Return: None
+     */
     @Step("Business Flow: Login to orangeHRM with Database Credentials")
     public static void loginDB(){
         List<String> cred = DBActions.getCredentials("SELECT name,password FROM employees WHERE id='3'");

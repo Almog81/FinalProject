@@ -7,7 +7,6 @@ import pageObjects.orangeHRM.*;
 public class ManagePages extends Base {
 
     //Web Page Object
-
     public static void initOrangeHRM(){
         orangeHRMLogin = PageFactory.initElements(driver, pageObjects.orangeHRM.LoginPage.class);
         orangeHRMLeftMenuPage = PageFactory.initElements(driver, LeftMenuPage.class);
