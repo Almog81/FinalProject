@@ -38,5 +38,4 @@ public class CalculatorDesktop extends CommonOps {
         DesktopFlows.numberDivideNumber("20","2");
         Verifications.verifyText(calcMain.field_result.getText().split(" ")[2],"10");
     }
-
 }

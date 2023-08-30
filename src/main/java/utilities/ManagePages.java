@@ -15,7 +15,6 @@ public class ManagePages extends Base {
         orangeHRMPIMMenu = PageFactory.initElements(driver, PIMMenu.class);
         orangeHRMAddNewEmployee = PageFactory.initElements(driver, AddNewEmployee.class);
         orangeHRMEmployeeListPage = PageFactory.initElements(driver, EmployeeListPage.class);
-
     }
 
     //Mobile Page Object

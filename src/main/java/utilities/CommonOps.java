@@ -98,6 +98,7 @@ public class CommonOps extends Base {
     */
     private static WebDriver initChromeDriver() {
         WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         return driver;
     }
