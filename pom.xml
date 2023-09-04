@@ -187,7 +187,7 @@
         </profile>
 
         <profile>
-            <id>WebDB</id>
+            <id>WebOnline</id>
             <build>
                 <plugins>
                     <plugin>
@@ -196,7 +196,7 @@
                         <version>2.22.1</version>
                         <configuration>
                             <suiteXmlFiles>
-                                <suiteXmlFile>TestNG_WebDB.xml</suiteXmlFile>
+                                <suiteXmlFile>TestNG_Web-online.xml</suiteXmlFile>
                             </suiteXmlFiles>
                             <argLine>
                                 -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
